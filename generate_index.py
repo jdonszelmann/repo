@@ -72,7 +72,10 @@ def main(args):
 
     for path, names in files.items():
         with open(path / "index.html", "w") as f:
-            f.write(HEADER.format(title=str(path)))
+            if str(path) != ".":
+                f.write(HEADER.format(title=str(path)))
+            else:
+                f.write(HEADER.format(title="repo.jonay2000.nl /"))
 
             f.write("<h1>Files:</h1>")
 
