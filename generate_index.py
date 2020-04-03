@@ -84,7 +84,7 @@ def main(args):
             cwd = os.getcwd()
             os.chdir(path)
             for name in next(os.walk('.'))[1]:
-                if not name.starts_with(".") and not os.path.islink(name):
+                if not name.startswith(".") and not os.path.islink(name):
                     f.write(f"<a href=\"{name}/index.html\"><div class=\"direntry entry\">{name}</div></a>")
             os.chdir(cwd)
 
